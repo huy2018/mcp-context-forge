@@ -210,6 +210,7 @@ jobs:
           docker buildx imagetools create \
             --tag "${IMAGE}:${SHA}" \
             --tag "${IMAGE}:latest" \
+            --tag "${IMAGE}:fix-rbac" \
             $IMAGES
 
           echo "Manifest created successfully"
