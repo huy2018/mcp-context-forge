@@ -410,7 +410,7 @@ async def _derive_team_from_payload(kwargs) -> Optional[str]:
 
     # Try request form data (admin UI endpoints)
     request = kwargs.get("request")
-    if request:
+    if request and isinstance(request, Request):
         content_type = request.headers.get("content-type", "")
         if "form" in content_type:
             try:
